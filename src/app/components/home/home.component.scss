@@ -1,3 +1,17 @@
+div {
+  animation: appearence 1s;
+ }
+
+ @keyframes appearence {
+   from {
+     opacity: 0;
+   }
+
+   to {
+     opacity: 1;
+   }
+ }
+
 #banner {
   background-image: url(../../../assets/img/bannerHome.jpg);
   background-size: cover;

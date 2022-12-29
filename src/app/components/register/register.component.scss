@@ -1,0 +1,13 @@
+#box {
+  animation: appearence 2s;
+ }
+
+ @keyframes appearence {
+   from {
+     opacity: 0;
+   }
+
+   to {
+     opacity: 1;
+   }
+ }
