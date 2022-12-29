@@ -1,0 +1,14 @@
+<h2 class="text-center mb-5"><span class="text-warning">Accedi</span> al tuo account e riprendi da dove avevi lasciato</h2>
+<div class="d-flex flex-column flex-lg-row justify-content-evenly align-items-center container">
+  <!-- FORM DI LOGIN -->
+    <form class="d-flex flex-column align-items-center p-3 card border border-light bg-dark mb-5 mb-lg-0">
+    <input type="email" name="email" id="email" placeholder="Email" required>
+    <input class="my-3" type="password" name="password" id="password" placeholder="Password" required>
+    <button class="btn btn-primary btn-sm w-100">Accedi</button>
+  </form>
+  <!-- LINK ALLA REGISTRAZIONE -->
+    <div class="card bg-dark border border-light p-3 d-flex flex-column align-items-center">
+      <p class="mb-3">Non sei ancora registrato?</p>
+      <a class="btn btn-outline-light" [routerLink]="['../register']">Registrati</a>
+    </div>
+  </div>
