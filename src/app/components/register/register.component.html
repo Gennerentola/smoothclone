@@ -12,17 +12,20 @@
       <input type="text" name="cognome" id="cognome" placeholder="Cognome" required class="my-3">
     </div>
     <input class="w-100" type="text" name="team" id="team" placeholder="Team" required>
-    <fieldset class="w-100 d-flex flex-column justify-content-start border rounded border-light my-3">
-      <p class="ms-1 mb-0">Genere:</p>
-      <div>
-        <input class="ms-1" type="radio" id="maschio" name="maschio" value="maschio" checked>
-        <label class="ms-1" for="maschio">Maschio</label>
+    <mdb-form-control class="w-100 d-flex flex-column justify-content-start border rounded border-light my-3"
+      formControlName="gender">
+      <p class="mb-0">Genere dei partecipanti:</p>
+      <div class="form-check">
+        <input mdbRadio class="form-check-input" formControlName="gender" type="radio" name="gender" value="maschio"
+          id="maschio" checked />
+        <label class="form-check-label" for="maschio">Maschio</label>
       </div>
-      <div>
-        <input class="ms-1" type="radio" id="femmina" name="femmina" value="femmina">
-        <label class="ms-1" for="femmina">Femmina</label>
+      <div class="form-check">
+        <input mdbRadio class="form-check-input" formControlName="gender" type="radio" name="gender" value="femmina"
+          id="femmina" />
+        <label class="form-check-label" for="femmina">Femmina</label>
       </div>
-    </fieldset>
+    </mdb-form-control>
     <input class="w-100" type="number" max="2005" min="1964" placeholder="Anno di nascita" required>
     <hr class="container text-light my-3">
     <input class="w-100" type="email" name="email" id="email" placeholder="Email" required>

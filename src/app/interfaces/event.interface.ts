@@ -6,5 +6,6 @@ export interface Event {
   "place": string,
   "rules": string,
   "date": string,
-  "organizer": string
+  "organizer": string,
+  "organizerId": number
 }
