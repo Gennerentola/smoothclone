@@ -1,9 +1,49 @@
-<h2 class="text-center mb-5"><span class="text-warning">REGISTRATI</span> ed inizia a cercare l'evento adatto a te</h2>
-<div id="box" class="d-flex flex-column flex-lg-row justify-content-evenly align-items-center container">
+<h2 class="text-center mb-5"><span class="text-warning">REGISTRATI</span> e trova o crea l'evento adatto a te</h2>
+<div id="box" class="d-flex flex-column-reverse flex-lg-row justify-content-evenly align-items-center container">
   <!-- LINK AL LOGIN -->
-  <div class="card bg-dark border border-light p-3 d-flex flex-column align-items-center mb-5 mb-lg-0">
+  <div class="card bg-dark border border-light p-3 d-flex flex-column align-items-center mb-5 mb-lg-0 order">
     <p class="mb-3">Sei già registrato?</p>
     <a class="btn btn-outline-light" [routerLink]="['../login']">Accedi</a>
   </div>
   <!-- FORM DI REGISTRAZIONE -->
+  <form class="card bg-dark border border-light p-3 d-flex flex-column align-items-center mb-5 mb-lg-0">
+    <div>
+      <input class="me-2" type="text" name="nome" id="nome" placeholder="Nome" required>
+      <input type="text" name="cognome" id="cognome" placeholder="Cognome" required class="my-3">
+    </div>
+    <input class="w-100" type="text" name="team" id="team" placeholder="Team" required>
+    <fieldset class="w-100 d-flex flex-column justify-content-start border rounded border-light my-3">
+      <p class="ms-1 mb-0">Genere:</p>
+      <div>
+        <input class="ms-1" type="radio" id="maschio" name="maschio" value="maschio" checked>
+        <label class="ms-1" for="maschio">Maschio</label>
+      </div>
+      <div>
+        <input class="ms-1" type="radio" id="femmina" name="femmina" value="femmina">
+        <label class="ms-1" for="femmina">Femmina</label>
+      </div>
+    </fieldset>
+    <input class="w-100" type="number" max="2005" min="1964" placeholder="Anno di nascita" required>
+    <hr class="container text-light my-3">
+    <input class="w-100" type="email" name="email" id="email" placeholder="Email" required>
+    <input type="password" name="password" id="password" placeholder="Password" required class="w-100 mt-3">
+    <hr class="container text-light">
+    <fieldset class="mb-3 w-100 d-flex flex-column justify-content-start"
+      title="È possibile scegliere più sport con la pressione contestuale di CTRL (CMD su Mac) e del tasto sinistro del mouse">
+      <label for="sports">Sport praticati:</label>
+      <select name="sports" id="sports" multiple required>
+        <option value="Boxing">Boxing</option>
+        <option value="MMA">MMA</option>
+        <option value="Judo">Judo</option>
+        <option value="BJJ">BJJ</option>
+        <option value="Karate">Karate</option>
+        <option value="Grappling">Grappling</option>
+        <option value="Taekwondo">Taekwondo</option>
+        <option value="Muay Thai">Muay Thai</option>
+        <option value="Kickboxing">Kickboxing</option>
+        <option value="Ju-Jitsu">Ju-Jitsu</option>
+      </select>
+    </fieldset>
+    <button class="btn btn-primary w-100">Registrati</button>
+  </form>
 </div>

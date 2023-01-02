@@ -23,6 +23,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { CreazioneEventoComponent } from './components/creazione-evento/creazione-evento.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { RegisterComponent } from './components/register/register.component';
     HomeComponent,
     AuthComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CreazioneEventoComponent
   ],
   imports: [
     BrowserModule,
