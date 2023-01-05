@@ -5,6 +5,8 @@ import { AuthComponent } from './components/auth/auth.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { CreazioneEventoComponent } from './components/creazione-evento/creazione-evento.component';
+import { RegolamentiComponent } from './components/regolamenti/regolamenti.component';
+import { EventiComponent } from './components/eventi/eventi.component';
 
 const routes: Routes = [
   {
@@ -28,6 +30,14 @@ const routes: Routes = [
   {
     path: "createEvent",
     component: CreazioneEventoComponent
+  },
+  {
+    path: "rules",
+    component: RegolamentiComponent
+  },
+  {
+    path: "events",
+    component: EventiComponent
   }
 ];
 

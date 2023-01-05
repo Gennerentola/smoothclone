@@ -24,6 +24,8 @@ import { AuthComponent } from './components/auth/auth.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { CreazioneEventoComponent } from './components/creazione-evento/creazione-evento.component';
+import { RegolamentiComponent } from './components/regolamenti/regolamenti.component';
+import { EventiComponent } from './components/eventi/eventi.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { CreazioneEventoComponent } from './components/creazione-evento/creazion
     AuthComponent,
     LoginComponent,
     RegisterComponent,
-    CreazioneEventoComponent
+    CreazioneEventoComponent,
+    RegolamentiComponent,
+    EventiComponent
   ],
   imports: [
     BrowserModule,

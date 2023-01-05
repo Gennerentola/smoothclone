@@ -18,8 +18,8 @@
     >
       <div class="navbar-nav">
         <a class="nav-link" [routerLink]="['/']" routerLink="home">Home</a>
-        <a class="nav-link" href="#">Eventi</a>
-        <a class="nav-link" href="#">Regolamenti</a>
+        <a class="nav-link" [routerLink]="['events']" routerLink="events">Eventi</a>
+        <a class="nav-link" [routerLink]="['rules']" routerLink="rules">Regolamenti</a>
       </div>
       <button class="btn btn-outline-light" [routerLink]="['auth/login']" routerLink="auth/login">Accedi</button>
     </div>
