@@ -6,30 +6,29 @@
     <a class="btn btn-outline-light" [routerLink]="['../login']">Accedi</a>
   </div>
   <!-- FORM DI REGISTRAZIONE -->
-  <form class="card bg-dark border border-light p-3 d-flex flex-column align-items-center mb-5 mb-lg-0">
+  <form title="Tutti  i campi sono obbligatori!" [formGroup]="registerForm" (ngSubmit)="onSubmit()"
+    class="card bg-dark border border-light p-3 d-flex flex-column align-items-center mb-5 mb-lg-0">
     <div>
-      <input class="me-2" type="text" name="nome" id="nome" placeholder="Nome" required>
-      <input type="text" name="cognome" id="cognome" placeholder="Cognome" required class="my-3">
+      <input class="me-2" type="text" formControlName="nome" placeholder="Nome">
+      <input type="text" formControlName="cognome" placeholder="Cognome" class="my-3">
     </div>
-    <input class="w-100" type="text" name="team" id="team" placeholder="Team" required>
-    <mdb-form-control class="w-100 d-flex flex-column justify-content-start border rounded border-light my-3"
-      formControlName="gender">
+    <input class="w-100" type="text" formControlName="team" placeholder="Team">
+    <mdb-form-control class="w-100 d-flex flex-column justify-content-start border rounded border-light my-3">
       <p class="mb-0">Genere:</p>
       <div class="form-check">
-        <input mdbRadio class="form-check-input" formControlName="gender" type="radio" name="gender" value="maschio"
-          id="maschio" checked />
+        <input mdbRadio class="form-check-input" formControlName="genere" type="radio" value="maschio" id="maschio" />
         <label class="form-check-label" for="maschio">Maschio</label>
       </div>
       <div class="form-check">
-        <input mdbRadio class="form-check-input" formControlName="gender" type="radio" name="gender" value="femmina"
-          id="femmina" />
+        <input mdbRadio class="form-check-input" formControlName="genere" type="radio" value="femmina" id="femmina" />
         <label class="form-check-label" for="femmina">Femmina</label>
       </div>
     </mdb-form-control>
-    <input class="w-100" type="number" max="2005" min="1964" placeholder="Anno di nascita" required>
+    <input class="w-100" type="number" formControlName="anno" placeholder="Anno di nascita">
     <hr class="container text-light my-3">
-    <input class="w-100" type="email" name="email" id="email" placeholder="Email" required>
-    <input type="password" name="password" id="password" placeholder="Password" required class="w-100 mt-3">
-    <button class="btn btn-primary w-100 mt-3">Registrati</button>
+    <input class="w-100" type="email" formControlName="email" placeholder="Email">
+    <input type="password" formControlName="password" placeholder="Password" class="w-100 my-3" mdbTooltip="La password deve essere lunga almeno 8 caratteri e deve contenere almeno una maiuscola, una minuscola, un numero ed un carattere speciale" placement="right" trigger="focus">
+    <input type="password" formControlName="confermaPassword" placeholder="Conferma password" class="w-100" mdbTooltip="Le password devono combaciare" placement="right" trigger="focus">
+    <button class="btn btn-primary w-100 mt-3" [disabled]="!registerForm.valid">Registrati</button>
   </form>
 </div>

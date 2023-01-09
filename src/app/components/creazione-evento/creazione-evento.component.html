@@ -1,13 +1,13 @@
 <main class="bg-dark text-light">
   <h1 class="text-center p-3"><span class="text-warning">CREA</span> il tuo evento</h1>
-  <form class="card bg-dark border border-light p-3 d-flex flex-column align-items-center w-75 mx-auto">
-    <input class="w-75" type="text" name="nome" id="nome" placeholder="Nome Evento" required>
-    <mdb-form-control class="w-75 my-3 border rounded border-light p-3" formControlName="sport">
+  <form title="Tutti  i campi sono obbligatori!" [formGroup]="eventForm" (ngSubmit)="onSubmit()" class="card bg-dark border border-light p-3 d-flex flex-column align-items-center w-75 mx-auto">
+    <input class="w-75" type="text" formControlName="nome" placeholder="Nome Evento">
+    <mdb-form-control class="w-75 my-3 border rounded border-light p-3">
       <p>Sport:</p>
       <div class="d-lg-flex justify-content-evenly flex-wrap">
         <div class="form-check">
           <input mdbRadio class="form-check-input" formControlName="sport" type="radio" name="sport" value="Boxing"
-            id="Boxing" checked />
+            id="Boxing"/>
           <label class="form-check-label" for="Boxing">Boxing</label>
         </div>
         <div class="form-check">
@@ -57,48 +57,46 @@
         </div>
       </div>
     </mdb-form-control>
-    <mdb-form-control class="w-75 d-flex flex-column justify-content-start border rounded border-light p-3"
-      formControlName="gender">
+    <mdb-form-control class="w-75 d-flex flex-column justify-content-start border rounded border-light p-3">
       <p class="mb-0">Genere dei partecipanti:</p>
       <div class="form-check">
-        <input mdbRadio class="form-check-input" formControlName="gender" type="radio" name="gender" value="maschile"
-          id="maschile" checked />
+        <input mdbRadio class="form-check-input" formControlName="genere" type="radio" value="maschile"
+          id="maschile"/>
         <label class="form-check-label" for="maschile">Maschile</label>
       </div>
       <div class="form-check">
-        <input mdbRadio class="form-check-input" formControlName="gender" type="radio" name="gender" value="femminile"
+        <input mdbRadio class="form-check-input" formControlName="genere" type="radio" value="femminile"
           id="femminile" />
         <label class="form-check-label" for="femminile">Femminile</label>
       </div>
     </mdb-form-control>
-    <mdb-form-control class="w-75 d-flex flex-column justify-content-start border rounded border-light my-3 p-3"
-      formControlName="rules">
+    <mdb-form-control class="w-75 d-flex flex-column justify-content-start border rounded border-light my-3 p-3" mdbTooltip="Per info visita la pagina Regolamenti" placement="right" trigger="focus">
       <p class="mb-0">Tipo di regolamento:</p>
       <div class="d-flex flex-column justify-content-start">
         <div class="form-check">
-          <input mdbRadio class="form-check-input" formControlName="rules" type="radio" name="rules"
-            value="full-contact" id="full-contact" checked />
+          <input mdbRadio class="form-check-input" formControlName="regole" type="radio" name="regole"
+            value="full-contact" id="full-contact"/>
           <label class="form-check-label" for="full-contact">Full-contact</label>
         </div>
         <div class="form-check">
-          <input mdbRadio class="form-check-input" formControlName="rules" type="radio" name="rules"
+          <input mdbRadio class="form-check-input" formControlName="regole" type="radio" name="regole"
             value="semi-contact" id="semi-contact" />
           <label class="form-check-label" for="semi-contact">Semi-contact</label>
         </div>
         <div class="form-check">
-          <input mdbRadio class="form-check-input" formControlName="rules" type="radio" name="rules"
+          <input mdbRadio class="form-check-input" formControlName="regole" type="radio" name="regole"
             value="light-contact" id="light-contact" />
           <label class="form-check-label" for="light-contact">Light-contact</label>
         </div>
       </div>
     </mdb-form-control>
-    <input type="text" class="w-75" name="luogo" id="luogo" placeholder="Indirizzo" required>
+    <input type="text" class="w-75" formControlName="luogo" placeholder="Luogo">
     <div class="w-75 d-flex justify-content-between mt-3">
       <div>
         <label class="me-2" for="data">Giorno:</label>
-        <input type="date" name="data" id="data" min="2023-01-01" required>
+        <input type="date" formControlName="data" min="2023-01-01">
       </div>
-      <button class="btn btn-success btn-rounded">Crea evento</button>
+      <button class="btn btn-success btn-rounded" [disabled]="!eventForm.valid">Crea evento</button>
     </div>
   </form>
 </main>
