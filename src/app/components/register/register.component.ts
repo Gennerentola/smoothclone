@@ -18,11 +18,7 @@ export class RegisterComponent implements OnInit {
       cognome: new FormControl(null, Validators.required),
       team: new FormControl(null, Validators.required),
       genere: new FormControl(null, Validators.required),
-      anno: new FormControl(null,
-        [
-          Validators.required, Validators.max(2005),
-          Validators.min(1964)
-        ]),
+      anno: new FormControl(null, Validators.required),
       email: new FormControl(null,
         [
           Validators.required,
