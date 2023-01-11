@@ -29,6 +29,6 @@
     <input class="w-100" type="email" formControlName="email" placeholder="Email">
     <input type="password" formControlName="password" placeholder="Password" class="w-100 my-3" mdbTooltip="La password deve essere lunga almeno 8 caratteri e deve contenere almeno una maiuscola, una minuscola, un numero ed un carattere speciale" placement="right" trigger="focus">
     <input type="password" formControlName="confermaPassword" placeholder="Conferma password" class="w-100" mdbTooltip="Le password devono combaciare" placement="right" trigger="focus">
-    <button class="btn btn-primary w-100 mt-3" [disabled]="!registerForm.valid">Registrati</button>
+    <button type="submit" class="btn btn-primary w-100 mt-3" [disabled]="!registerForm.valid">Registrati</button>
   </form>
 </div>

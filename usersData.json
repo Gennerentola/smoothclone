@@ -1,3 +1,14 @@
 {
-  "athletes": []
+  "users": [
+    {
+      "email": "gennaro@notaro.com",
+      "password": "$2a$10$s7ezmgm9xJlxOh7hZ3R8UuWwHfNqXBt/h5fvKwLY4CkJZKWMMyhyW",
+      "nome": "Gennaro",
+      "cognome": "Notaro",
+      "team": "ASD Black Mamba",
+      "genere": "maschio",
+      "annoDiNascita": 1996,
+      "id": 1
+    }
+  ]
 }

@@ -27,6 +27,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { CreazioneEventoComponent } from './components/creazione-evento/creazione-evento.component';
 import { RegolamentiComponent } from './components/regolamenti/regolamenti.component';
 import { EventiComponent } from './components/eventi/eventi.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { EventiComponent } from './components/eventi/eventi.component';
     MdbValidationModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
