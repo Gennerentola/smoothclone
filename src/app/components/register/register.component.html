@@ -8,6 +8,7 @@
   <!-- FORM DI REGISTRAZIONE -->
   <form title="Tutti  i campi sono obbligatori!" [formGroup]="registerForm" (ngSubmit)="onSubmit()"
     class="card bg-dark border border-light p-3 d-flex flex-column align-items-center mb-5 mb-lg-0">
+    <h4 class="mb-0">Anagrafica</h4>
     <div>
       <input class="me-2" type="text" formControlName="nome" placeholder="Nome">
       <input type="text" formControlName="cognome" placeholder="Cognome" class="my-3">
@@ -26,6 +27,7 @@
     </mdb-form-control>
     <input class="w-100" type="number" formControlName="anno" placeholder="Anno di nascita" min="1964" max="2005">
     <hr class="container text-light my-3">
+    <h4 class="mb-3">Credenziali d'accesso</h4>
     <input class="w-100" type="email" formControlName="email" placeholder="Email">
     <input type="password" formControlName="password" placeholder="Password" class="w-100 my-3" mdbTooltip="La password deve essere lunga almeno 8 caratteri e deve contenere almeno una maiuscola, una minuscola, un numero ed un carattere speciale" placement="right" trigger="focus">
     <input type="password" formControlName="confermaPassword" placeholder="Conferma password" class="w-100" mdbTooltip="Le password devono combaciare" placement="right" trigger="focus">

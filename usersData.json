@@ -9,6 +9,16 @@
       "genere": "maschio",
       "annoDiNascita": 1996,
       "id": 1
+    },
+    {
+      "email": "michel@brando.com",
+      "password": "$2a$10$H.KKpQNYuLvrwKCRUdGwmuRf6L3sFLmvG129K50bMvRwT.648JXo2",
+      "nome": "Michel",
+      "cognome": "Brando",
+      "team": "ASD Black Mamba",
+      "genere": "maschio",
+      "annoDiNascita": 1973,
+      "id": 2
     }
   ]
 }

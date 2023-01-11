@@ -5,7 +5,7 @@
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="d-flex flex-column align-items-center p-3 card border border-light bg-dark mb-5 mb-lg-0">
     <input type="email" formControlName="email" placeholder="Email" required>
     <input class="my-3" type="password" formControlName="password" placeholder="Password" required>
-    <button class="btn btn-primary btn-sm w-100" [disabled]="!loginForm.valid">Accedi</button>
+    <button type="submit" class="btn btn-primary btn-sm w-100" [disabled]="!loginForm.valid">Accedi</button>
   </form>
   <!-- LINK ALLA REGISTRAZIONE -->
   <div class="card bg-dark border border-light p-3 d-flex flex-column align-items-center">

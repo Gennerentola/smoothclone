@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { catchError } from 'rxjs';
+import { LoginAthlete } from 'src/app/interfaces/athlete.interface';
+import { AuthService } from 'src/app/security/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup
 
-  constructor() { }
+  constructor(private authSrv: AuthService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -25,7 +29,22 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.loginForm)
+    let data: LoginAthlete = {
+      email: this.loginForm.value.email,
+      password: this.loginForm.value.password
+    }
+    this.authSrv.login(data).pipe(catchError(err => {
+      if (err.error == "Cannot find user") {
+        alert("Utente non registrato")
+      } else if (err.error == "Incorrect password") {
+        alert("Password errata")
+      } else if (err.error == "Email format is invalid") {
+        alert("Formato email errato")
+      }
+      throw err
+    })).subscribe(res => {
+      this.router.navigate(['/'])
+    })
   }
 
 }
