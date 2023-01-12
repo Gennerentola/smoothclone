@@ -13,7 +13,7 @@ export class AuthService {
 
   jwtHelper = new JwtHelperService()
   private authSubj = new BehaviorSubject<null | AuthAthlete>(null);
-  athlete$ = this.authSubj.asObservable();
+  user$ = this.authSubj.asObservable();
 
 
 

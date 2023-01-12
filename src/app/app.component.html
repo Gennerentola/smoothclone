@@ -21,7 +21,10 @@
         <a class="nav-link" [routerLink]="['events']" routerLink="events">Eventi</a>
         <a class="nav-link" [routerLink]="['rules']" routerLink="rules">Regolamenti</a>
       </div>
-      <button class="btn btn-outline-light" [routerLink]="['auth/login']" routerLink="auth/login">Accedi</button>
+      <div *ngIf="!loggato; else accountLoggato">
+        <button class="btn btn-outline-light" [routerLink]="['auth/login']" routerLink="auth/login">Accedi</button>
+      </div>
+
     </div>
   </div>
 </nav>
@@ -101,3 +104,12 @@
   <!-- Copyright -->
 
 </footer>
+
+<ng-template #accountLoggato>
+  <div class="d-flex align-items-lg-center flex-column flex-lg-row" *ngIf="loggato">
+    <a class="nav-link text-light" [routerLink]="['user']" routerLink="user"><i class="far fa-user"></i></a>
+    <div>
+      <button class="btn btn-outline-light" (click)="logout()">Logout</button>
+    </div>
+  </div>
+</ng-template>

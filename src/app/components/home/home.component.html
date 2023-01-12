@@ -3,10 +3,15 @@
   <div>
     <!-- BANNER -->
     <div id="banner" class="p-5">
-      <h1 class="mb-3 display-1 fw-bold">Iscriviti adesso e comincia a competere con migliaia di atleti in tutta Italia</h1>
-      <div class="pb-5">
-        <a class="btn btn-primary btn-lg me-3 btn-rounded" [routerLink]="['auth/login']" routerLink="auth/login" >Unisciti ora</a>
-        <a class="btn btn-light mt-3 btn-lg btn-rounded" [routerLink]="['events']" routerLink="events">Sfoglia gli eventi disponibili</a>
+      <div *ngIf="!loggato; else bannerLoggato">
+        <h1 class="mb-3 display-1 fw-bold">Iscriviti adesso e comincia a competere con migliaia di atleti in tutta Italia
+        </h1>
+        <div class="pb-5">
+          <a class="btn btn-primary btn-lg me-3 btn-rounded" [routerLink]="['auth/login']" routerLink="auth/login">Unisciti
+            ora</a>
+          <a class="btn btn-light mt-3 btn-lg btn-rounded" [routerLink]="['events']" routerLink="events">Sfoglia gli eventi
+            disponibili</a>
+        </div>
       </div>
     </div>
     <!-- SPORTS CARD -->
@@ -149,3 +154,11 @@
     </div>
   </div>
 </main>
+
+<ng-template #bannerLoggato>
+  <h1 class="mb-3 display-1 fw-bold">Bentornato {{this.nome}}</h1>
+      <div class="pb-5">
+        <a class="btn btn-primary btn-lg me-3 btn-rounded" [routerLink]="['user']" routerLink="user" >Vai al tuo profilo</a>
+        <a class="btn btn-light mt-3 btn-lg btn-rounded" [routerLink]="['events']" routerLink="events">Sfoglia gli eventi disponibili</a>
+      </div>
+</ng-template>

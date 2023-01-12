@@ -15,7 +15,7 @@ export interface LoginAthlete {
 
 export interface AuthAthlete {
   accessToken: string,
-  athlete: {
+  user: {
     id: number,
     nome: string,
     cognome: string,

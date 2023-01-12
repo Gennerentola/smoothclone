@@ -10,18 +10,17 @@ import { Subscription } from 'rxjs';
 })
 export class AppComponent {
   title = 'smoothclone';
-  nome: string = '';
   loggato: boolean = false;
-  atleta: AuthAthlete | null = null;
 
   subscriptions:Subscription[] = [];
 
   constructor(private authSrv: AuthService) {}
 
   ngOnInit(): void {
-    this.subscriptions.push(this.authSrv.athlete$.subscribe(data => this.atleta = data));
-    this.nome = this.atleta!.athlete.nome.charAt(0).toUpperCase() + this.atleta!.athlete.nome.slice(1);
-    this.loggato= localStorage.getItem('atleta')!== undefined || localStorage.getItem('atleta')!== null;
+    if (localStorage.getItem('user')) {
+      this.loggato = true;
+    }
+    console.log(this.loggato)
   }
 
   logout() {

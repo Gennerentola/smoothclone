@@ -7,6 +7,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { CreazioneEventoComponent } from './components/creazione-evento/creazione-evento.component';
 import { RegolamentiComponent } from './components/regolamenti/regolamenti.component';
 import { EventiComponent } from './components/eventi/eventi.component';
+import { ProfiloComponent } from './components/profilo/profilo.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: "events",
     component: EventiComponent
+  },
+  {
+    path: "user",
+    component: ProfiloComponent
   }
 ];
 

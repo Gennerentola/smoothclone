@@ -28,6 +28,7 @@ import { CreazioneEventoComponent } from './components/creazione-evento/creazion
 import { RegolamentiComponent } from './components/regolamenti/regolamenti.component';
 import { EventiComponent } from './components/eventi/eventi.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProfiloComponent } from './components/profilo/profilo.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { HttpClientModule } from '@angular/common/http';
     RegisterComponent,
     CreazioneEventoComponent,
     RegolamentiComponent,
-    EventiComponent
+    EventiComponent,
+    ProfiloComponent
   ],
   imports: [
     BrowserModule,

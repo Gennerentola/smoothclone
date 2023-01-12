@@ -38,8 +38,6 @@ export class LoginComponent implements OnInit {
         alert("Utente non registrato")
       } else if (err.error == "Incorrect password") {
         alert("Password errata")
-      } else if (err.error == "Email format is invalid") {
-        alert("Formato email errato")
       }
       throw err
     })).subscribe(res => {
