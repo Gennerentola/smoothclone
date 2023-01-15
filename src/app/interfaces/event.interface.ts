@@ -1,11 +1,22 @@
 export interface Event {
-  "id": number,
-  "name": string,
-  "sport": string,
-  "gender": string,
-  "place": string,
-  "rules": string,
-  "date": string,
-  "organizer": string,
-  "organizerId": number
+  nome: string,
+  sport: string,
+  genere: string,
+  luogo: string,
+  regole: string,
+  data: string,
+  descrizione: string,
+  organizzatore: {
+    nome: string,
+    cognome: string,
+    team: string,
+    idOrganizzatore: number,
+    email: string
+  }
+  iscritti: {
+    nome: string,
+    cognome: string,
+    team: string,
+    idIscrito: number
+  }
 }

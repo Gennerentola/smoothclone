@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { AuthAthlete } from 'src/app/interfaces/athlete.interface';
 import { AuthService } from 'src/app/security/auth.service';
+import { Event } from 'src/app/interfaces/event.interface';
 
 @Component({
   selector: 'app-profilo',
@@ -18,6 +19,7 @@ export class ProfiloComponent implements OnInit {
   eta?: number;
   user: AuthAthlete | null | undefined;
   subscriptions:Subscription[] = [];
+  iscrizioni: Event[] = [];
 
   constructor(private authSrv: AuthService) { }
 

@@ -19,7 +19,8 @@ export class CreazioneEventoComponent implements OnInit {
       genere: new FormControl(null, Validators.required),
       regole: new FormControl(null, Validators.required),
       luogo: new FormControl(null, Validators.required),
-      data: new FormControl(null, Validators.required)
+      data: new FormControl(null, Validators.required),
+      descrizione: new FormControl(null, [Validators.required, Validators.minLength(120)])
     })
   }
 

@@ -1,8 +1,26 @@
 <main class="bg-dark text-light">
   <h1 class="text-center text-warning p-3">PROFILO</h1>
-  <div class="border border-2 border-light rounded-6 w-50 mx-auto p-4">
+  <div class="border border-2 border-light rounded-6 w-50 mx-auto p-4 mb-5">
     <h2>{{nome}} {{cognome}}, {{eta}} anni</h2>
     <h5 class="text-muted">{{team}}</h5>
     <p class="text-muted">{{genere}} <br> {{email}}</p>
   </div>
+  <section class="container">
+    <div>
+      <h2>Eventi a cui sei iscritto:</h2>
+      <div *ngIf="iscrizioni.length > 0; else nessunaIscrizione">
+        <!-- STAMPA EVENTI -->
+      </div>
+    </div>
+  </section>
 </main>
+
+<ng-template #nessunaIscrizione>
+  <p>Non sei ancora iscritto a nessuna gara!</p>
+  <div>
+    <a class="btn btn-light btn-rounded" [routerLink]="['events']" routerLink="events">Sfoglia gli eventi
+      disponibili</a>
+    <a class="ms-3 btn btn-primary btn-rounded" [routerLink]="['../createEvent']" routerLink="../createEvent">Crea il tuo
+      evento</a>
+  </div>
+</ng-template>

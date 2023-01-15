@@ -8,6 +8,7 @@ import { CreazioneEventoComponent } from './components/creazione-evento/creazion
 import { RegolamentiComponent } from './components/regolamenti/regolamenti.component';
 import { EventiComponent } from './components/eventi/eventi.component';
 import { ProfiloComponent } from './components/profilo/profilo.component';
+import { AuthGuard } from './security/auth.guard';
 
 const routes: Routes = [
   {
@@ -42,7 +43,12 @@ const routes: Routes = [
   },
   {
     path: "user",
+    canActivate: [AuthGuard],
     component: ProfiloComponent
+  },
+  {
+    path: "**",
+    redirectTo: "auth/login"
   }
 ];
 

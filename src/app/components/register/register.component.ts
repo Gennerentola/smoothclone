@@ -48,7 +48,7 @@ export class RegisterComponent implements OnInit {
     console.log(this.registerForm)
     let data: Athlete = {
       nome: this.registerForm.value.nome,
-      email: this.registerForm.value.email,
+      email: this.registerForm.value.email.toLowerCase(),
       password: this.registerForm.value.password,
       cognome: this.registerForm.value.cognome,
       team: this.registerForm.value.team,

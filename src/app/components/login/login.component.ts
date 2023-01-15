@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     let data: LoginAthlete = {
-      email: this.loginForm.value.email,
+      email: this.loginForm.value.email.toLowerCase(),
       password: this.loginForm.value.password
     }
     this.authSrv.login(data).pipe(catchError(err => {

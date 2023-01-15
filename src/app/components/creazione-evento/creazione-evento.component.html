@@ -1,13 +1,14 @@
 <main class="bg-dark text-light">
   <h1 class="text-center p-3"><span class="text-warning">CREA</span> il tuo evento</h1>
-  <form title="Tutti  i campi sono obbligatori!" [formGroup]="eventForm" (ngSubmit)="onSubmit()" class="card bg-dark border border-light p-3 d-flex flex-column align-items-center w-75 mx-auto">
+  <form title="Tutti  i campi sono obbligatori!" [formGroup]="eventForm" (ngSubmit)="onSubmit()"
+    class="card bg-dark border border-light p-3 d-flex flex-column align-items-center w-75 mx-auto">
     <input class="w-75" type="text" formControlName="nome" placeholder="Nome Evento">
     <mdb-form-control class="w-75 my-3 border rounded border-light p-3">
       <p>Sport:</p>
       <div class="d-lg-flex justify-content-evenly flex-wrap">
         <div class="form-check">
           <input mdbRadio class="form-check-input" formControlName="sport" type="radio" name="sport" value="Boxing"
-            id="Boxing"/>
+            id="Boxing" />
           <label class="form-check-label" for="Boxing">Boxing</label>
         </div>
         <div class="form-check">
@@ -60,8 +61,7 @@
     <mdb-form-control class="w-75 d-flex flex-column justify-content-start border rounded border-light p-3">
       <p class="mb-0">Genere dei partecipanti:</p>
       <div class="form-check">
-        <input mdbRadio class="form-check-input" formControlName="genere" type="radio" value="maschile"
-          id="maschile"/>
+        <input mdbRadio class="form-check-input" formControlName="genere" type="radio" value="maschile" id="maschile" />
         <label class="form-check-label" for="maschile">Maschile</label>
       </div>
       <div class="form-check">
@@ -70,33 +70,30 @@
         <label class="form-check-label" for="femminile">Femminile</label>
       </div>
     </mdb-form-control>
-    <mdb-form-control class="w-75 d-flex flex-column justify-content-start border rounded border-light my-3 p-3" mdbTooltip="Per info visita la pagina Regolamenti" placement="right" trigger="focus">
+    <mdb-form-control class="w-75 d-flex flex-column justify-content-start border rounded border-light my-3 p-3"
+      mdbTooltip="Per info visita la pagina Regolamenti" placement="right" trigger="focus">
       <p class="mb-0">Tipo di regolamento:</p>
       <div class="d-flex flex-column justify-content-start">
         <div class="form-check">
-          <input mdbRadio class="form-check-input" formControlName="regole" type="radio"
-            value="full-contact"/>
+          <input mdbRadio class="form-check-input" formControlName="regole" type="radio" value="full-contact" />
           <label class="form-check-label" for="full-contact">Full-contact</label>
         </div>
         <div class="form-check">
-          <input mdbRadio class="form-check-input" formControlName="regole" type="radio"
-            value="semi-contact"/>
+          <input mdbRadio class="form-check-input" formControlName="regole" type="radio" value="semi-contact" />
           <label class="form-check-label" for="semi-contact">Semi-contact</label>
         </div>
         <div class="form-check">
-          <input mdbRadio class="form-check-input" formControlName="regole" type="radio"
-            value="light-contact"/>
+          <input mdbRadio class="form-check-input" formControlName="regole" type="radio" value="light-contact" />
           <label class="form-check-label" for="light-contact">Light-contact</label>
         </div>
       </div>
     </mdb-form-control>
     <input type="text" class="w-75" formControlName="luogo" placeholder="Luogo">
-    <div class="w-75 d-flex justify-content-between mt-3">
-      <div>
-        <label class="me-2" for="data">Giorno:</label>
-        <input type="date" formControlName="data" min="2023-01-01">
-      </div>
-      <button class="btn btn-success btn-rounded" [disabled]="!eventForm.valid">Crea evento</button>
+    <div class="my-3 w-75">
+      <label class="me-2" for="data">Giorno:</label>
+      <input type="date" formControlName="data" min="2023-01-01">
     </div>
+    <textarea class="w-75 mb-3" placeholder="Descrizione evento (min. 120 caratteri)" formControlName="descrizione" rows="10"></textarea>
+    <button class="btn btn-primary btn-rounded" [disabled]="!eventForm.valid">Crea evento</button>
   </form>
 </main>
