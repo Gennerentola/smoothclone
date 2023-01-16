@@ -13,10 +13,17 @@ export interface Event {
     idOrganizzatore: number,
     email: string
   }
-  iscritti: {
-    nome: string,
-    cognome: string,
-    team: string,
-    idIscrito: number
-  }
+  iscritti?: [
+    {
+      nome: string,
+      cognome: string,
+      team: string,
+      idIscrito: number
+    }
+  ]
+}
+
+export interface IscrizioniAtleta {
+  idAtleta: string,
+  evento: Event
 }

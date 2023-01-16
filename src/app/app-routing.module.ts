@@ -31,6 +31,7 @@ const routes: Routes = [
   },
   {
     path: "createEvent",
+    canActivate: [AuthGuard],
     component: CreazioneEventoComponent
   },
   {
