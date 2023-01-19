@@ -19,6 +19,26 @@
       "genere": "maschio",
       "annoDiNascita": 1974,
       "id": 2
+    },
+    {
+      "email": "rita@anania.com",
+      "password": "$2a$10$GAnLT.K4xagVmaBIO.GZUen2L8VYtJ.MImOuLItQnnLl2x5l.9I9G",
+      "nome": "Rita",
+      "cognome": "Anania",
+      "team": "ASD Black Mamba",
+      "genere": "femmina",
+      "annoDiNascita": 1998,
+      "id": 3
+    },
+    {
+      "email": "biagio@vitolo.com",
+      "password": "$2a$10$zvXFR1FivxsGFYq8k8wxAuLNYXn0jifcISu1zBRPda2tLBmSnXO2K",
+      "nome": "Biagio",
+      "cognome": "Vitolo",
+      "team": "Amara Lucania",
+      "genere": "maschio",
+      "annoDiNascita": 1996,
+      "id": 4
     }
   ]
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AuthAthlete } from 'src/app/interfaces/athlete.interface';
 import { Event } from 'src/app/interfaces/event.interface';
@@ -23,7 +24,7 @@ export class CreazioneEventoComponent implements OnInit {
   email!: string;
 
 
-  constructor(private eventiSrv: EventiService, private authSrv: AuthService) { }
+  constructor(private eventiSrv: EventiService, private authSrv: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     this.eventForm = new FormGroup({
@@ -62,9 +63,10 @@ export class CreazioneEventoComponent implements OnInit {
       },
       iscritti: undefined
     }
-    this.eventiSrv.postPersona(data).subscribe(data => {
+    this.eventiSrv.postEvento(data).subscribe(data => {
       console.log(data)
     })
+    setTimeout(()=>{this.router.navigate(['/events'])}, 3000)
   }
 
 }

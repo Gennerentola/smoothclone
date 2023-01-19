@@ -20,7 +20,6 @@ export class AppComponent {
     if (localStorage.getItem('user')) {
       this.loggato = true;
     }
-    console.log(this.loggato)
   }
 
   logout() {

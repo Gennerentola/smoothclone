@@ -43,6 +43,11 @@ const routes: Routes = [
     component: EventiComponent
   },
   {
+    path: "events/:id",
+    canActivate: [AuthGuard],
+    component: EventiComponent
+  },
+  {
     path: "user",
     canActivate: [AuthGuard],
     component: ProfiloComponent

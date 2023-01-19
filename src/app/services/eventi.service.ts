@@ -11,7 +11,12 @@ export class EventiService {
 
   constructor(private http: HttpClient) { }
 
-  postPersona(data: Event) {
+  postEvento(data: Event) {
     return this.http.post(this.url + 'eventi.json',data);
   }
+
+  getEventi() {
+    return this.http.get(this.url + 'eventi.json');
+  }
+
 }

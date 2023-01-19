@@ -11,3 +11,62 @@ div {
      opacity: 1;
    }
  }
+
+ .boxing {
+  background-image: url(../../../assets/img/boxe.jpg);
+  background-size: cover;
+}
+
+.mma {
+  background-image: url(../../../assets/img/mma.jpg);
+  background-size: cover;
+}
+
+.judo {
+  background-image: url(../../../assets/img/judo.jpg);
+  background-size: cover;
+}
+
+.bjj {
+  background-image: url(../../../assets/img/bjj.jpg);
+  background-size: cover;
+}
+
+.karate {
+  background-image: url(../../../assets/img/karate.jpg);
+  background-size: cover;
+}
+
+.grappling {
+  background-image: url(../../../assets/img/grappling.jpg);
+  background-size: cover;
+}
+
+.taekwondo {
+  background-image: url(../../../assets/img/taekwondo.jpg);
+  background-size: cover;
+}
+
+.muaythai {
+  background-image: url(../../../assets/img/muaythai.jpg);
+  background-size: cover;
+}
+
+.kickboxing {
+  background-image: url(../../../assets/img/kickboxe.jpg);
+  background-size: cover;
+}
+
+.jujitsu {
+  background-image: url(../../../assets/img/jujitsu.webp);
+  background-size: cover;
+}
+
+#cardEvento {
+  width: 250px;
+  min-width: 30%;
+  p, h5 {
+    text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
+    1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+  }
+}

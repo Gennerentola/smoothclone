@@ -1,15 +1,62 @@
 <main class="bg-dark text-light">
-  <section class="container">
+  <section class="container" *ngIf="!dettagliEvento; else dettagli">
     <div class="py-3">
-      <h1>Dai un'occhiata agli eventi disponibili e preparati a <span class="text-warning">combattere</span></h1>
-      <div>
+      <h1 class="text-center">Dai un'occhiata agli eventi disponibili e preparati a <span
+          class="text-warning">combattere</span></h1>
+      <div class="container-fluid d-flex justify-content-between my-5 flex-column flex-lg-row flex-wrap">
         <!-- STAMPA DEGLI EVENTI -->
+        <div id="cardEvento" *ngFor="let evento of eventi; index as i">
+          <div class="card text-center bg-dark border border-light m-3">
+            <div class="card-header border-light">{{evento.sport}}</div>
+            <div class="card-body"[ngClass]="{
+                'boxing': evento.sport == 'Boxing',
+                'mma': evento.sport == 'MMA',
+                'judo': evento.sport == 'Judo',
+                'bjj': evento.sport == 'BJJ',
+                'karate': evento.sport == 'Karate',
+                'grappling': evento.sport == 'Grappling',
+                'taekwondo': evento.sport == 'Taekwondo',
+                'muaythai': evento.sport == 'Muay Thai',
+                'kickboxing': evento.sport == 'Kickboxing',
+                'jujitsu': evento.sport == 'Ju-Jitsu'
+              }">
+              <h5 class="card-title text-warning">{{evento.nome}}</h5>
+              <p class="card-text">{{evento.descrizione}}</p>
+              <a class="btn btn-rounded btn-primary" routerLink="../events/{{i}}">Dettagli</a>
+            </div>
+            <div class="card-footer border-light text-muted">{{evento.data}}, {{evento.luogo}}</div>
+          </div>
+        </div>
       </div>
     </div>
     <div>
       <h2>Non hai trovato l'evento adatto a te?</h2>
-      <a class="btn btn-primary btn-lg btn-rounded" [routerLink]="['../createEvent']" routerLink="../createEvent">Crea il tuo
+      <a class="btn btn-primary btn-lg btn-rounded" [routerLink]="['../createEvent']" routerLink="../createEvent">Crea
+        il tuo
         evento</a>
     </div>
   </section>
+
+  <!-- DETTAGLI EVENTO -->
+  <ng-template #dettagli>
+    <div class="container p-5">
+      <div class="border border-2 border-light rounded-6 p-3">
+        <h1 class="text-warning">{{eventi[indice].nome}}</h1>
+        <h4 class="text-muted">Competizione {{eventi[indice].genere}} di {{eventi[indice].sport}}</h4>
+        <small class="text-muted">{{eventi[indice].data}}, {{eventi[indice].luogo}}</small>
+        <hr class="container">
+        <p>{{eventi[indice].descrizione}}</p>
+        <hr class="container">
+        <div class="d-flex justify-content-between flex-column flex-lg-row">
+          <div>
+            <h5>Informazioni di contatto</h5>
+            <p>Evento a cura di {{eventi[indice].organizzatore.nome}} {{eventi[indice].organizzatore.cognome}}
+              ({{eventi[indice].organizzatore.team}}) <br> Email: <a class="text-light text-decoration-underline"
+                href="mailto:{{eventi[indice].organizzatore.email}}">{{eventi[indice].organizzatore.email}}</a></p>
+          </div>
+          <button class="btn btn-outline-light btn-rounded">Iscriviti</button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
 </main>
