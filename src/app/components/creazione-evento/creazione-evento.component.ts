@@ -60,8 +60,7 @@ export class CreazioneEventoComponent implements OnInit {
         team: this.team,
         idOrganizzatore: this.id,
         email: this.email
-      },
-      iscritti: undefined
+      }
     }
     this.eventiSrv.postEvento(data).subscribe(data => {
       console.log(data)

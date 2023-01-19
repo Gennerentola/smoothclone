@@ -12,18 +12,12 @@ export interface Event {
     team: string,
     idOrganizzatore: number,
     email: string
-  }
-  iscritti?: [
-    {
-      nome: string,
-      cognome: string,
-      team: string,
-      idIscrito: number
-    }
-  ]
+  },
+  id?: string
 }
 
 export interface IscrizioniAtleta {
   idAtleta: string,
-  evento: Event
+  evento: Event,
+  id?: string
 }

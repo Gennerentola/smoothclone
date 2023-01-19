@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Event } from '../interfaces/event.interface';
+import { Event, IscrizioniAtleta } from '../interfaces/event.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +17,10 @@ export class EventiService {
 
   getEventi() {
     return this.http.get(this.url + 'eventi.json');
+  }
+
+  postIscrizione(data: IscrizioniAtleta) {
+    return this.http.post(this.url + 'iscrizioni.json', data);
   }
 
 }
