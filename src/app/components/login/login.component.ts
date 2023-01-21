@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup
+  err?: string;
 
   constructor(private authSrv: AuthService, private router: Router) { }
 
@@ -34,15 +35,19 @@ export class LoginComponent implements OnInit {
       password: this.loginForm.value.password
     }
     this.authSrv.login(data).pipe(catchError(err => {
-      if (err.error == "Cannot find user") {
+      if (err.error.error.message == "EMAIL_NOT_FOUND") {
         alert("Utente non registrato")
-      } else if (err.error == "Incorrect password") {
+      } else if (err.error.error.message == "INVALID_PASSWORD") {
         alert("Password errata")
       }
       throw err
-    })).subscribe(res => {
-      this.router.navigate(['/'])
+    })).subscribe(() => {
+      this.authSrv.recuperoAnagrafica(this.loginForm.value.email.toLowerCase());
+      setTimeout(() => {
+        window.location.href = 'http://localhost:4200';
+      }, 500)
     })
+
   }
 
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthAthlete } from 'src/app/interfaces/athlete.interface';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/security/auth.service';
 
@@ -12,16 +11,16 @@ export class HomeComponent implements OnInit {
 
   loggato: boolean = false;
   nome?: string;
-  user: AuthAthlete | null | undefined;
+  user: any;
   subscriptions:Subscription[] = [];
 
   constructor(private authSrv: AuthService) { }
 
   ngOnInit(): void {
-    if (localStorage.getItem('user')) {
+    if (localStorage.getItem('atleta')) {
       this.loggato = true;
-      this.subscriptions.push(this.authSrv.user$.subscribe(data => this.user = data));
-      this.nome = this.user!.user.nome.charAt(0).toUpperCase() + this.user!.user.nome.slice(1);
+      this.user = JSON.parse(localStorage.getItem('atleta')!)
+      this.nome = this.user!.nome.charAt(0).toUpperCase() + this.user!.nome.slice(1);
     }
   }
 

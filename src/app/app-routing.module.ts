@@ -9,6 +9,7 @@ import { RegolamentiComponent } from './components/regolamenti/regolamenti.compo
 import { EventiComponent } from './components/eventi/eventi.component';
 import { ProfiloComponent } from './components/profilo/profilo.component';
 import { AuthGuard } from './security/auth.guard';
+import { Errore404Component } from './components/errore404/errore404.component';
 
 const routes: Routes = [
   {
@@ -51,6 +52,10 @@ const routes: Routes = [
     path: "user",
     canActivate: [AuthGuard],
     component: ProfiloComponent
+  },
+  {
+    path: "ERROR404",
+    component: Errore404Component
   },
   {
     path: "**",

@@ -4,7 +4,6 @@ export interface Athlete {
   team: string,
   genere: string,
   email: string,
-  password: string,
   annoDiNascita: number
 }
 
@@ -14,14 +13,11 @@ export interface LoginAthlete {
 }
 
 export interface AuthAthlete {
-  accessToken: string,
-  user: {
-    id: number,
-    nome: string,
-    cognome: string,
-    team: string,
-    genere: string,
-    annoDiNascita: string,
-    email: string
-  }
+  idToken:	string,
+  email: string,
+  refreshToken: string,
+  expiresIn: string,
+  localId: string,
+  displayName?: string,
+  registered?: boolean
 }

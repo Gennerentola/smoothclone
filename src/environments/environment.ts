@@ -4,7 +4,15 @@
 
 export const environment = {
   production: false,
-  api: "http://localhost:4201"
+  firebaseConfig: {
+    apiKey: "AIzaSyD9XWzq3oNtmwAkM8UrpZhx9FXUEinpYoI",
+    authDomain: "smoothclone-51d89.firebaseapp.com",
+    databaseURL: "https://smoothclone-51d89-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "smoothclone-51d89",
+    storageBucket: "smoothclone-51d89.appspot.com",
+    messagingSenderId: "350693300287",
+    appId: "1:350693300287:web:6c2e56e86f97e9a23c008a"
+  }
 };
 
 /*

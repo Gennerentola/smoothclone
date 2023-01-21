@@ -29,6 +29,8 @@ import { RegolamentiComponent } from './components/regolamenti/regolamenti.compo
 import { EventiComponent } from './components/eventi/eventi.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfiloComponent } from './components/profilo/profilo.component';
+import { environment } from "src/environments/environment";
+import { Errore404Component } from './components/errore404/errore404.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,8 @@ import { ProfiloComponent } from './components/profilo/profilo.component';
     CreazioneEventoComponent,
     RegolamentiComponent,
     EventiComponent,
-    ProfiloComponent
+    ProfiloComponent,
+    Errore404Component
   ],
   imports: [
     BrowserModule,

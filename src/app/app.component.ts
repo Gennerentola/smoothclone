@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { AuthService } from './security/auth.service';
-import { AuthAthlete } from './interfaces/athlete.interface';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -17,7 +16,7 @@ export class AppComponent {
   constructor(private authSrv: AuthService) {}
 
   ngOnInit(): void {
-    if (localStorage.getItem('user')) {
+    if (localStorage.getItem('atleta')) {
       this.loggato = true;
     }
   }

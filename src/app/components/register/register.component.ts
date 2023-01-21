@@ -3,8 +3,7 @@ import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn,
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/security/auth.service';
 import { catchError } from 'rxjs';
-import { Athlete } from 'src/app/interfaces/athlete.interface';
-import { TimeScale } from 'chart.js';
+import { Athlete, LoginAthlete } from 'src/app/interfaces/athlete.interface';
 
 @Component({
   selector: 'app-register',
@@ -33,7 +32,7 @@ export class RegisterComponent implements OnInit {
       password: new FormControl(null,
         [
           Validators.required,
-          Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}'),
+          Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{7,}'),
           this.passwordObserver('confermaPassword', true)
         ]),
       confermaPassword: new FormControl(null,
@@ -46,25 +45,40 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     console.log(this.registerForm)
-    let data: Athlete = {
+    let anagrafica: Athlete = {
       nome: this.registerForm.value.nome,
       email: this.registerForm.value.email.toLowerCase(),
-      password: this.registerForm.value.password,
       cognome: this.registerForm.value.cognome,
       team: this.registerForm.value.team,
       genere: this.registerForm.value.genere,
       annoDiNascita: this.registerForm.value.anno
     }
-    console.log(data)
-    this.authSrv.signUp(data).pipe(catchError(err => {
-      if (err.error == "Email already exists") {
+    let credenziali: LoginAthlete = {
+      email: this.registerForm.value.email.toLowerCase(),
+      password: this.registerForm.value.password,
+    }
+    // ISCRIZIONE DATI D'ACCESSO
+    this.authSrv.signUpCredenziali(credenziali).pipe(catchError(err => {
+      if (err.error.error.code == 400) {
         alert('Email già esistente');
       }
       throw err
-    })).subscribe(res => {
+    })).subscribe(() => {
       this.err = undefined
-      this.router.navigate(['/'])
-    })
+      // ISCRIZIONE DATI ANAGRAFICI
+      this.authSrv.signUpAnagrafica(anagrafica).pipe(catchError(err => {
+        if (err.error.error.code == 404) {
+          alert('Siamo spiacenti ma abbiamo un problema, riprova più tardi!')
+        }
+        throw err
+      })).subscribe(res => {
+        this.err = undefined
+        this.authSrv.recuperoAnagrafica(this.registerForm.value.email.toLowerCase())
+      });
+      // RECUPERO DATI ANAGRAFICI
+      setTimeout(() => { window.location.href = 'http://localhost:4200'; }, 500)
+    });
+
   }
 
   passwordObserver(matchTo: string, reverse?: boolean): ValidatorFn {
