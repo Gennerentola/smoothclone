@@ -7,9 +7,44 @@
   </div>
   <section class="container">
     <div>
-      <h2>Eventi a cui sei iscritto:</h2>
+      <h2>Gestisci le tue iscrizioni:</h2>
       <div *ngIf="iscrizioni.length > 0; else nessunaIscrizione">
-        <!-- STAMPA EVENTI -->
+        <table class="table text-light align-middle mb-0 bg-dark">
+          <thead class="bg-dark">
+            <tr>
+              <th>Nome</th>
+              <th class="d-none d-md-table-cell">Sport</th>
+              <th class="d-none d-md-table-cell">Luogo</th>
+              <th class="d-none d-md-table-cell">Data</th>
+              <th>Gestisci iscrizione</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let iscrizione of iscrizioni">
+              <td>
+                {{iscrizione.evento.nome}}
+              </td>
+              <td class="d-none d-md-table-cell">
+                {{iscrizione.evento.sport}}
+              </td>
+              <td class="d-none d-md-table-cell">
+                {{iscrizione.evento.luogo}}
+              </td>
+              <td class="d-none d-md-table-cell">
+                {{iscrizione.evento.data}}
+              </td>
+              <td>
+                <div class="d-flex flex-column">
+                  <button type="button" routerLink="../events/{{iscrizione.evento.id}}"
+                    class="btn btn-primary btn-sm btn-rounded mb-3">
+                    Dettagli evento
+                  </button>
+                  <button type="button" class="btn btn-danger btn-sm btn-rounded" (click)="cancellaIscrizione(iscrizione.id)">Cancella Iscrizione</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -20,7 +55,8 @@
   <div>
     <a class="btn btn-light btn-rounded" [routerLink]="['events']" routerLink="events">Sfoglia gli eventi
       disponibili</a>
-    <a class="ms-3 btn btn-primary btn-rounded" [routerLink]="['../createEvent']" routerLink="../createEvent">Crea il tuo
+    <a class="ms-3 btn btn-primary btn-rounded" [routerLink]="['../createEvent']" routerLink="../createEvent">Crea il
+      tuo
       evento</a>
   </div>
 </ng-template>

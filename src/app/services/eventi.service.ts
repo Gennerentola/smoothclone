@@ -23,4 +23,12 @@ export class EventiService {
     return this.http.post(this.url + 'iscrizioni.json', data);
   }
 
+  getIscrizioni() {
+    return this.http.get(this.url + 'iscrizioni.json');
+  }
+
+  deleteIscrizione(id: string) {
+    return this.http.delete(`${this.url}iscrizioni/${id}.json`);
+  }
+
 }

@@ -17,7 +17,7 @@ export interface Event {
 }
 
 export interface IscrizioniAtleta {
-  idAtleta: string,
+  emailAtleta: string,
   evento: Event,
   id?: string
 }

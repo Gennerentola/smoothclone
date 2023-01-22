@@ -8,7 +8,7 @@
         <div id="cardEvento" *ngFor="let evento of eventi">
           <div class="card text-center bg-dark border border-light m-3">
             <div class="card-header border-light">{{evento.sport}}</div>
-            <div class="card-body"[ngClass]="{
+            <div class="card-body" [ngClass]="{
                 'boxing': evento.sport == 'Boxing',
                 'mma': evento.sport == 'MMA',
                 'judo': evento.sport == 'Judo',
@@ -20,7 +20,7 @@
                 'kickboxing': evento.sport == 'Kickboxing',
                 'jujitsu': evento.sport == 'Ju-Jitsu'
               }">
-              <div id="contenutoScrollabile">
+              <div id="contenutoScrollabile" class="mb-2">
                 <h5 class="card-title text-warning">{{evento.nome}}</h5>
                 <p class="card-text">{{evento.descrizione}}</p>
               </div>
@@ -42,7 +42,18 @@
   <!-- DETTAGLI EVENTO -->
   <ng-template #dettagli>
     <div class="container p-5">
-      <div class="border border-2 border-light rounded-6 p-3">
+      <div id="cartaDettaglio" class="border border-2 border-light rounded-6 p-3" [ngClass]="{
+      'boxing': dettaglio.sport == 'Boxing',
+      'mma': dettaglio.sport == 'MMA',
+      'judo': dettaglio.sport == 'Judo',
+      'bjj': dettaglio.sport == 'BJJ',
+      'karate': dettaglio.sport == 'Karate',
+      'grappling': dettaglio.sport == 'Grappling',
+      'taekwondo': dettaglio.sport == 'Taekwondo',
+      'muaythai': dettaglio.sport == 'Muay Thai',
+      'kickboxing': dettaglio.sport == 'Kickboxing',
+      'jujitsu': dettaglio.sport == 'Ju-Jitsu'
+    }">
         <h1 class="text-warning">{{dettaglio.nome}}</h1>
         <h4 class="text-muted">Competizione {{dettaglio.genere}} di {{dettaglio.sport}}</h4>
         <small class="text-muted">{{dettaglio.data}}, {{dettaglio.luogo}}</small>
@@ -56,7 +67,7 @@
               ({{dettaglio.organizzatore.team}}) <br> Email: <a class="text-light text-decoration-underline"
                 href="mailto:{{dettaglio.organizzatore.email}}">{{dettaglio.organizzatore.email}}</a></p>
           </div>
-          <button class="btn btn-outline-light btn-rounded">Iscriviti</button>
+          <button class="btn btn-primary btn-rounded" (click)="iscriviti(dettaglio)">Iscriviti</button>
         </div>
       </div>
     </div>

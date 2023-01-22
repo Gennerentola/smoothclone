@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { AuthAthlete } from 'src/app/interfaces/athlete.interface';
 import { Event } from 'src/app/interfaces/event.interface';
 import { AuthService } from 'src/app/security/auth.service';
 import { EventiService } from 'src/app/services/eventi.service';

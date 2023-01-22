@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
 
   loggato: boolean = false;
   nome?: string;
+  genere?: string;
   user: any;
   subscriptions:Subscription[] = [];
 
@@ -21,6 +22,7 @@ export class HomeComponent implements OnInit {
       this.loggato = true;
       this.user = JSON.parse(localStorage.getItem('atleta')!)
       this.nome = this.user!.nome.charAt(0).toUpperCase() + this.user!.nome.slice(1);
+      this.genere = this.user!.genere;
     }
   }
 

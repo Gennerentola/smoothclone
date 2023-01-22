@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { AuthService } from 'src/app/security/auth.service';
-import { Event } from 'src/app/interfaces/event.interface';
+import { Athlete } from 'src/app/interfaces/athlete.interface';
+import { EventiService } from 'src/app/services/eventi.service';
+import { catchError } from 'rxjs';
+import { Router } from '@angular/router';
+import { IscrizioniAtleta } from 'src/app/interfaces/event.interface';
 
 @Component({
   selector: 'app-profilo',
@@ -16,11 +19,11 @@ export class ProfiloComponent implements OnInit {
   genere?: string;
   email?: string;
   eta?: number;
-  user: any;
-  subscriptions:Subscription[] = [];
-  iscrizioni: Event[] = [];
+  user?: Athlete;
+  subscriptions: Subscription[] = [];
+  iscrizioni: IscrizioniAtleta[] = [];
 
-  constructor(private authSrv: AuthService) { }
+  constructor(private eventiSrv: EventiService, private router: Router) { }
 
   ngOnInit(): void {
     this.user = JSON.parse(localStorage.getItem('atleta')!);
@@ -31,7 +34,25 @@ export class ProfiloComponent implements OnInit {
     this.email = this.user!.email;
     let oggi = new Date;
     this.eta = (oggi.getFullYear() - Number(this.user!.annoDiNascita))
+    // ISCRIZIONI UTENTE
+    this.eventiSrv.getIscrizioni().pipe(catchError(err => {
+      if (err.error.error.code == 404) {
+        this.router.navigate(['ERROR404'])
+      }
+      throw err
+    })).subscribe((data: any) => {
+      Object.keys(data).map((key) => {
+        data[key]['id'] = key;
+        this.iscrizioni.push(data[key])
+      })
+      this.iscrizioni = this.iscrizioni.filter((e) => {return e.emailAtleta == this.email})
+    })
   }
 
+  cancellaIscrizione(id: any) {
+    this.eventiSrv.deleteIscrizione(id).subscribe(() => {
+      window.location.href = 'http://localhost:4200/user'
+    })
+  }
 }
 

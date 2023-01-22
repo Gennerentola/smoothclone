@@ -68,7 +68,7 @@ export class RegisterComponent implements OnInit {
       // ISCRIZIONE DATI ANAGRAFICI
       this.authSrv.signUpAnagrafica(anagrafica).pipe(catchError(err => {
         if (err.error.error.code == 404) {
-          alert('Siamo spiacenti ma abbiamo un problema, riprova più tardi!')
+          this.router.navigate(['ERROR404'])
         }
         throw err
       })).subscribe(res => {

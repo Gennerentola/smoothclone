@@ -18,7 +18,8 @@
     >
       <div class="navbar-nav">
         <a class="nav-link" [routerLink]="['/']" routerLink="home">Home</a>
-        <a class="nav-link" [routerLink]="['events']" routerLink="events">Eventi</a>
+        <a class="nav-link" [routerLink]="['events']" routerLink="events">Eventi disponibili</a>
+        <a class="nav-link" [routerLink]="['createEvent']" routerLink="createEvent">Crea un evento</a>
         <a class="nav-link" [routerLink]="['rules']" routerLink="rules">Regolamenti</a>
       </div>
       <div *ngIf="!loggato; else accountLoggato">
