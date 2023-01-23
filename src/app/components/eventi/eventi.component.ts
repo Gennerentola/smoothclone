@@ -66,7 +66,8 @@ export class EventiComponent implements OnInit {
       this.user = JSON.parse(localStorage.getItem('atleta')!);
       this.email = this.user!.email;
       this.iscrizioni = this.iscrizioni.filter((e) => { return e.emailAtleta == this.email })
-      if ((this.matchIscrizione = this.iscrizioni.filter((e) => { return e.evento == infoEvento })).length > 0) {
+      if ((this.matchIscrizione = this.iscrizioni.filter((e) => { return e.evento.id == infoEvento.id })).length > 0) {
+        this.loading = false;
         alert('Sei già iscritto a quest\'evento, consulta la pagina \'user\' per gestire le tue iscrizioni');
       } else {
         // ISCRIZIONE

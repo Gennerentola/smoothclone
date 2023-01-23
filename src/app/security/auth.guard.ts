@@ -19,7 +19,7 @@ export class AuthGuard implements CanActivate {
         if (localStorage.getItem('atleta')) {
           return true;
         }
-        return this.router.createUrlTree(['auth/login']);
+        return this.router.createUrlTree(['']);
       })
     );
   }
