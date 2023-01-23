@@ -47,7 +47,7 @@ export class ProfiloComponent implements OnInit {
         data[key]['id'] = key;
         this.iscrizioni.push(data[key])
       })
-      this.iscrizioni = this.iscrizioni.filter((e) => {return e.emailAtleta == this.email})
+      this.iscrizioni = this.iscrizioni.filter((e) => { return e.emailAtleta == this.email })
       this.loading = false;
     })
   }

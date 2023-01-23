@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   nome?: string;
   genere?: string;
   user: any;
-  subscriptions:Subscription[] = [];
+  subscriptions: Subscription[] = [];
   loading: boolean = false;
 
   constructor(private authSrv: AuthService) { }

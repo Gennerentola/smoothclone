@@ -1,21 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" [ngClass]="{'loading' : loading == true}">
   <div class="container-fluid">
-    <a class="navbar-brand" [routerLink]="['/']" routerLink="home" routerLinkActive="active"><img src="../assets/img/logo_bgdark.png" width="159px" height="25px" alt="logo"></a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      (click)="noListNav.toggle()"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+    <a class="navbar-brand" [routerLink]="['/']" routerLink="home" routerLinkActive="active">
+      <img class="smoothcloneLogo" src="../assets/img/logo_bgdark.png" alt="logo"></a>
+    <button class="navbar-toggler" type="button" (click)="noListNav.toggle()" aria-expanded="false"
+      aria-label="Toggle navigation">
       <i class="fas fa-bars"></i>
     </button>
-    <div
-      class="collapse navbar-collapse d-lg-flex justify-content-between"
-      id="navbarNavAltMarkup"
-      mdbCollapse
-      #noListNav="mdbCollapse"
-    >
+    <div class="collapse navbar-collapse d-lg-flex justify-content-between" id="navbarNavAltMarkup" mdbCollapse
+      #noListNav="mdbCollapse">
       <div class="navbar-nav">
         <a class="nav-link" [routerLink]="['/']" routerLink="home">Home</a>
         <a class="nav-link" [routerLink]="['events']" routerLink="events">Eventi disponibili</a>
@@ -63,7 +55,7 @@
         <div class="mx-auto mb-4">
           <!-- Content -->
           <h6 class="fw-bold mb-4">
-            <img src="../assets/img/logo_bgdark.png" width="159px" height="25px" alt="logo">
+            <img class="smoothcloneLogo" src="../assets/img/logo_bgdark.png" alt="logo">
           </h6>
           <p class="w-50 mx-auto mx-md-0">
             Non fare del successo un obiettivo, bensì una conseguenza. Ci vediamo sul tatami!
@@ -80,7 +72,8 @@
             <i class="fas fa-envelope me-3"></i>
             <a class="text-reset" href="mailto:" target="_blank">gennaro.notaro1@gmail.com</a>
           </p>
-          <p><i class="fas fa-phone me-3"></i> <a class="text-reset" href="tel:+" target="_blank">(+39) 348 450 1800</a></p>
+          <p><i class="fas fa-phone me-3"></i> <a class="text-reset" href="tel:+" target="_blank">(+39) 348 450 1800</a>
+          </p>
         </div>
         <!-- Grid column -->
       </div>

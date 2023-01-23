@@ -13,7 +13,7 @@ export interface LoginAthlete {
 }
 
 export interface AuthAthlete {
-  idToken:	string,
+  idToken: string,
   email: string,
   refreshToken: string,
   expiresIn: string,

@@ -13,7 +13,9 @@ export class AuthService {
 
   jwtHelper = new JwtHelperService()
   private authSubj = new BehaviorSubject<null | Athlete | AuthAthlete>(null);
+  private tokenSubj = new BehaviorSubject<AuthAthlete | null>(null);
   user$ = this.authSubj.asObservable();
+  userForInterceptor$ = this.tokenSubj.asObservable();
   urlRegistrazione = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyD9XWzq3oNtmwAkM8UrpZhx9FXUEinpYoI";
   urlAccesso = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyD9XWzq3oNtmwAkM8UrpZhx9FXUEinpYoI";
   urlAnagrafica = "https://smoothclone-51d89-default-rtdb.europe-west1.firebasedatabase.app/utenti.json";
@@ -29,9 +31,9 @@ export class AuthService {
 
   signUpCredenziali(data: LoginAthlete) {
     return this.http.post<AuthAthlete>(this.urlRegistrazione, data).pipe(tap((res) => {
-        this.authSubj.next(res);
-        localStorage.setItem('user', JSON.stringify(res))
-      }))
+      this.authSubj.next(res);
+      localStorage.setItem('user', JSON.stringify(res))
+    }))
   }
 
   signUpAnagrafica(data: Athlete) {
@@ -73,7 +75,7 @@ export class AuthService {
     if (this.timeoutLogout) {
       clearTimeout(this.timeoutLogout)
     }
-    window.location.href= 'http://localhost:4200';
+    window.location.href = 'http://localhost:4200';
   }
 
   autoLogout(data: AuthAthlete) {

@@ -12,7 +12,7 @@ export class EventiService {
   constructor(private http: HttpClient) { }
 
   postEvento(data: Event) {
-    return this.http.post(this.url + 'eventi.json',data);
+    return this.http.post(this.url + 'eventi.json', data);
   }
 
   getEventi() {

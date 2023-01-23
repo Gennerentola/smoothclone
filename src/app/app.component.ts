@@ -12,9 +12,9 @@ export class AppComponent {
   loggato: boolean = false;
   loading: boolean = false;
 
-  subscriptions:Subscription[] = [];
+  subscriptions: Subscription[] = [];
 
-  constructor(private authSrv: AuthService) {}
+  constructor(private authSrv: AuthService) { }
 
   ngOnInit(): void {
     if (localStorage.getItem('atleta')) {

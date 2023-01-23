@@ -80,7 +80,7 @@ export class RegisterComponent implements OnInit {
       setTimeout(() => {
         this.loading = false;
         window.location.href = 'http://localhost:4200';
-       }, 500)
+      }, 500)
     });
 
   }

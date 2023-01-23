@@ -2,19 +2,19 @@ $desktopView: 992px;
 
 div {
   animation: appearence 1s;
- }
+}
 
- @keyframes appearence {
-   from {
-     opacity: 0;
-   }
+@keyframes appearence {
+  from {
+    opacity: 0;
+  }
 
-   to {
-     opacity: 1;
-   }
- }
+  to {
+    opacity: 1;
+  }
+}
 
- .boxing {
+.boxing {
   background-image: url(../../../assets/img/boxe.jpg);
   background-size: cover;
   background-position: center;
@@ -75,16 +75,21 @@ div {
 }
 
 #cardEvento {
-  p, h5 {
+
+  p,
+  h5 {
     text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
-    1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+      1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
   }
+
   #contenutoScrollabile {
-      height: 150px;
-      overflow-y: auto;
-    }
+    height: 150px;
+    overflow-y: auto;
+  }
+
   @media screen and (min-width: $desktopView) {
     width: 300px;
+
     #contenutoScrollabile {
       height: 250px;
     }
@@ -92,9 +97,14 @@ div {
 }
 
 #cartaDettaglio {
-  h1, h4, h5, p, small {
+
+  h1,
+  h4,
+  h5,
+  p,
+  small {
     text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
-    1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+      1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
   }
 }
 

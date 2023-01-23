@@ -115,7 +115,8 @@
 </main>
 
 <ng-template #bannerLoggato>
-  <h1 class="mb-3 display-1 fw-bold">Bentornat<span *ngIf="this.genere == 'maschio'">o</span><span *ngIf="this.genere == 'femmina'">a</span> {{this.nome}}</h1>
+  <h1 class="mb-3 display-1 fw-bold">Bentornat<span *ngIf="this.genere == 'maschio'">o</span><span
+      *ngIf="this.genere == 'femmina'">a</span> {{this.nome}}</h1>
   <div class="pb-5">
     <a class="btn btn-primary btn-lg me-3 btn-rounded" [routerLink]="['user']" routerLink="user">Vai al tuo profilo</a>
     <a class="btn btn-light mt-3 btn-lg btn-rounded" [routerLink]="['events']" routerLink="events">Sfoglia gli eventi
