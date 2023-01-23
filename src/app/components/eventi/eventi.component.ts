@@ -59,18 +59,19 @@ export class EventiComponent implements OnInit {
         data[key]['id'] = key;
         this.iscrizioni.push(data[key])
       })
+      this.user = JSON.parse(localStorage.getItem('atleta')!);
+      this.email = this.user!.email;
       this.iscrizioni = this.iscrizioni.filter((e) => { return e.emailAtleta == this.email })
-      if (this.matchIscrizione = this.iscrizioni.filter((e) => { return e.evento == infoEvento })) {
+      if ((this.matchIscrizione = this.iscrizioni.filter((e) => { return e.evento == infoEvento })).length > 0) {
         alert('Sei già iscritto a quest\'evento, consulta la pagina \'user\' per gestire le tue iscrizioni');
       } else {
         // ISCRIZIONE
-        this.user = JSON.parse(localStorage.getItem('atleta')!);
         let iscrizione: IscrizioniAtleta = {
-          emailAtleta: this.user!.email,
+          emailAtleta: this.email,
           evento: infoEvento
         }
         this.genere = this.user!.genere;
-        if ((this.dettaglio.genere == 'maschile' && this.genere == 'maschio') || (this.dettaglio.genere == 'femminile' && this.genere == 'femmina')) {
+        if (((this.dettaglio.genere == 'maschile' && this.genere == 'maschio') || (this.dettaglio.genere == 'femminile' && this.genere == 'femmina'))) {
           this.eventiSrv.postIscrizione(iscrizione).pipe(catchError(err => {
             if (err.error.error.code == 404) {
               this.router.navigate(['ERROR404'])
