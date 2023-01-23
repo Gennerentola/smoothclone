@@ -1,36 +1,41 @@
-<h2 class="text-center mb-5"><span class="text-warning">REGISTRATI</span> e trova o crea l'evento adatto a te</h2>
-<div id="box" class="d-flex flex-column-reverse flex-lg-row justify-content-evenly align-items-center container">
-  <!-- LINK AL LOGIN -->
-  <div class="card bg-dark border border-light p-3 d-flex flex-column align-items-center mb-5 mb-lg-0 order">
-    <p class="mb-3">Sei già registrato?</p>
-    <a class="btn btn-outline-light" [routerLink]="['../login']">Accedi</a>
-  </div>
-  <!-- FORM DI REGISTRAZIONE -->
-  <form title="Tutti  i campi sono obbligatori!" [formGroup]="registerForm" (ngSubmit)="onSubmit()"
-    class="card bg-dark border border-light p-3 d-flex flex-column align-items-center mb-5 mb-lg-0">
-    <h4 class="mb-0">Anagrafica</h4>
-    <div>
-      <input class="me-2" type="text" formControlName="nome" placeholder="Nome">
-      <input type="text" formControlName="cognome" placeholder="Cognome" class="my-3">
+<section [ngClass]="{'loading' : loading == true}">
+  <h2 class="text-center mb-5"><span class="text-warning">REGISTRATI</span> e trova o crea l'evento adatto a te</h2>
+  <div id="box" class="d-flex flex-column-reverse flex-lg-row justify-content-evenly align-items-center container">
+    <!-- LINK AL LOGIN -->
+    <div class="card bg-dark border border-light p-3 d-flex flex-column align-items-center mb-5 mb-lg-0 order">
+      <p class="mb-3">Sei già registrato?</p>
+      <a class="btn btn-outline-light" [routerLink]="['../login']">Accedi</a>
     </div>
-    <input class="w-100" type="text" formControlName="team" placeholder="Team">
-    <mdb-form-control class="w-100 d-flex flex-column justify-content-start border rounded border-light my-3">
-      <p class="mb-0">Genere:</p>
-      <div class="form-check">
-        <input mdbRadio class="form-check-input" formControlName="genere" type="radio" value="maschio" id="maschio" />
-        <label class="form-check-label" for="maschio">Maschio</label>
+    <!-- FORM DI REGISTRAZIONE -->
+    <form title="Tutti  i campi sono obbligatori!" [formGroup]="registerForm" (ngSubmit)="onSubmit()"
+      class="card bg-dark border border-light p-3 d-flex flex-column align-items-center mb-5 mb-lg-0">
+      <h4 class="mb-0">Anagrafica</h4>
+      <div>
+        <input class="me-2" type="text" formControlName="nome" placeholder="Nome">
+        <input type="text" formControlName="cognome" placeholder="Cognome" class="my-3">
       </div>
-      <div class="form-check">
-        <input mdbRadio class="form-check-input" formControlName="genere" type="radio" value="femmina" id="femmina" />
-        <label class="form-check-label" for="femmina">Femmina</label>
-      </div>
-    </mdb-form-control>
-    <input class="w-100" type="number" formControlName="anno" placeholder="Anno di nascita" min="1964" max="2005">
-    <hr class="container text-light my-3">
-    <h4 class="mb-3">Credenziali d'accesso</h4>
-    <input class="w-100" type="email" formControlName="email" placeholder="Email">
-    <input type="password" formControlName="password" placeholder="Password" class="w-100 my-3" mdbTooltip="La password deve essere lunga almeno 8 caratteri e deve contenere almeno una maiuscola, una minuscola, un numero ed un carattere speciale" placement="right" trigger="focus">
-    <input type="password" formControlName="confermaPassword" placeholder="Conferma password" class="w-100" mdbTooltip="Le password devono combaciare" placement="right" trigger="focus">
-    <button type="submit" class="btn btn-primary w-100 mt-3" [disabled]="!registerForm.valid">Registrati</button>
-  </form>
-</div>
+      <input class="w-100" type="text" formControlName="team" placeholder="Team">
+      <mdb-form-control class="w-100 d-flex flex-column justify-content-start border rounded border-light my-3">
+        <p class="mb-0">Genere:</p>
+        <div class="form-check">
+          <input mdbRadio class="form-check-input" formControlName="genere" type="radio" value="maschio" id="maschio" />
+          <label class="form-check-label" for="maschio">Maschio</label>
+        </div>
+        <div class="form-check">
+          <input mdbRadio class="form-check-input" formControlName="genere" type="radio" value="femmina" id="femmina" />
+          <label class="form-check-label" for="femmina">Femmina</label>
+        </div>
+      </mdb-form-control>
+      <input class="w-100" type="number" formControlName="anno" placeholder="Anno di nascita" min="1964" max="2005">
+      <hr class="container text-light my-3">
+      <h4 class="mb-3">Credenziali d'accesso</h4>
+      <input class="w-100" type="email" formControlName="email" placeholder="Email">
+      <input type="password" formControlName="password" placeholder="Password" class="w-100 my-3"
+        mdbTooltip="La password deve essere lunga almeno 8 caratteri e deve contenere almeno una maiuscola, una minuscola, un numero ed un carattere speciale"
+        placement="right" trigger="focus">
+      <input type="password" formControlName="confermaPassword" placeholder="Conferma password" class="w-100"
+        mdbTooltip="Le password devono combaciare" placement="right" trigger="focus">
+      <button type="submit" class="btn btn-primary w-100 mt-3" [disabled]="!registerForm.valid">Registrati</button>
+    </form>
+  </div>
+</section>

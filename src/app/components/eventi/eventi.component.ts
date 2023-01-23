@@ -22,10 +22,12 @@ export class EventiComponent implements OnInit {
   err?: string;
   iscrizioni: IscrizioniAtleta[] = [];
   matchIscrizione: any;
+  loading: boolean = false;
 
   constructor(private eventiSrv: EventiService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.loading = true;
     this.eventiSrv.getEventi().pipe(catchError(err => {
       if (err.error.error.code == 404) {
         this.router.navigate(['ERROR404'])
@@ -45,9 +47,11 @@ export class EventiComponent implements OnInit {
         this.dettagliEvento = false;
       }
     })
+    this.loading = false;
   }
 
   iscriviti(infoEvento: Event) {
+    this.loading = true;
     // VERIFICA ISCRIZIONE
     this.eventiSrv.getIscrizioni().pipe(catchError(err => {
       if (err.error.error.code == 404) {
@@ -79,9 +83,11 @@ export class EventiComponent implements OnInit {
             throw err
           })).subscribe(() => {
             this.err = undefined;
+            this.loading = false;
             window.location.href = 'http://localhost:4200/user'
           })
         } else {
+          this.loading = false;
           alert('Mi dispiace, la competizione è riservata agli atleti del sesso opposto')
         }
       }

@@ -13,7 +13,7 @@ import { EventiService } from 'src/app/services/eventi.service';
 })
 export class CreazioneEventoComponent implements OnInit {
 
-  subscriptions:Subscription[] = [];
+  subscriptions: Subscription[] = [];
   eventForm!: FormGroup;
   user: any;
   nome!: string;
@@ -21,6 +21,7 @@ export class CreazioneEventoComponent implements OnInit {
   team!: string;
   id!: number;
   email!: string;
+  loading: boolean = false;
 
 
   constructor(private eventiSrv: EventiService, private authSrv: AuthService, private router: Router) { }
@@ -44,7 +45,7 @@ export class CreazioneEventoComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.eventForm)
+    this.loading = true;
     let data: Event = {
       nome: this.eventForm.value.nome,
       sport: this.eventForm.value.sport,
@@ -64,7 +65,10 @@ export class CreazioneEventoComponent implements OnInit {
     this.eventiSrv.postEvento(data).subscribe(data => {
       console.log(data)
     })
-    setTimeout(()=>{this.router.navigate(['/events'])}, 3000)
+    setTimeout(() => {
+      this.loading = false;
+      this.router.navigate(['/events'])
+    }, 3000)
   }
 
 }

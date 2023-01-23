@@ -1,4 +1,4 @@
-<main class="bg-dark container-fluid p-0 text-light">
+<main class="bg-dark container-fluid p-0 text-light" [ngClass]="{'loading' : loading == true}">
   <!-- HOME SENZA ACCESSO -->
   <div>
     <!-- BANNER -->
@@ -110,13 +110,6 @@
           class="text-warning">Crea</span> il tuo evento in pochi minuti</h2>
       <a class="btn btn-primary btn-lg btn-rounded" [routerLink]="['createEvent']" routerLink="createEvent">Crea un
         evento</a>
-    </div>
-    <!-- PREVIEW FUNZIONALITA' -->
-    <div class="pb-5">
-      <div class="row container">
-        <div class="col-lg-6"></div>
-        <div class="col-lg-6"></div>
-      </div>
     </div>
   </div>
 </main>

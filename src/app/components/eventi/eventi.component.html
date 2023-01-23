@@ -1,4 +1,4 @@
-<main class="bg-dark text-light">
+<main class="bg-dark text-light" [ngClass]="{'loading' : loading == true}">
   <section class="container" *ngIf="!dettagliEvento; else dettagli">
     <div class="py-3">
       <h1 class="text-center">Dai un'occhiata agli eventi disponibili e preparati a <span
@@ -40,7 +40,7 @@
   </section>
 
   <!-- DETTAGLI EVENTO -->
-  <ng-template #dettagli>
+  <ng-template #dettagli [ngClass]="{'loading' : loading == true}">
     <div class="container p-5">
       <div id="cartaDettaglio" class="border border-2 border-light rounded-6 p-3" [ngClass]="{
       'boxing': dettaglio.sport == 'Boxing',

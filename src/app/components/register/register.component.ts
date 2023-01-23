@@ -14,6 +14,7 @@ export class RegisterComponent implements OnInit {
 
   registerForm!: FormGroup;
   err?: string;
+  loading: boolean = false;
 
   constructor(private authSrv: AuthService, private router: Router) { }
 
@@ -44,7 +45,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.registerForm)
+    this.loading = true;
     let anagrafica: Athlete = {
       nome: this.registerForm.value.nome,
       email: this.registerForm.value.email.toLowerCase(),
@@ -76,7 +77,10 @@ export class RegisterComponent implements OnInit {
         this.authSrv.recuperoAnagrafica(this.registerForm.value.email.toLowerCase())
       });
       // RECUPERO DATI ANAGRAFICI
-      setTimeout(() => { window.location.href = 'http://localhost:4200'; }, 500)
+      setTimeout(() => {
+        this.loading = false;
+        window.location.href = 'http://localhost:4200';
+       }, 500)
     });
 
   }

@@ -22,10 +22,12 @@ export class ProfiloComponent implements OnInit {
   user?: Athlete;
   subscriptions: Subscription[] = [];
   iscrizioni: IscrizioniAtleta[] = [];
+  loading: boolean = false;
 
   constructor(private eventiSrv: EventiService, private router: Router) { }
 
   ngOnInit(): void {
+    this.loading = true;
     this.user = JSON.parse(localStorage.getItem('atleta')!);
     this.nome = this.user!.nome.charAt(0).toUpperCase() + this.user!.nome.slice(1);
     this.cognome = this.user!.cognome.charAt(0).toUpperCase() + this.user!.cognome.slice(1);
@@ -46,11 +48,14 @@ export class ProfiloComponent implements OnInit {
         this.iscrizioni.push(data[key])
       })
       this.iscrizioni = this.iscrizioni.filter((e) => {return e.emailAtleta == this.email})
+      this.loading = false;
     })
   }
 
   cancellaIscrizione(id: any) {
+    this.loading = true;
     this.eventiSrv.deleteIscrizione(id).subscribe(() => {
+      this.loading = false;
       window.location.href = 'http://localhost:4200/user'
     })
   }

@@ -1,4 +1,4 @@
-<main class="bg-dark text-light">
+<main class="bg-dark text-light" [ngClass]="{'loading' : loading == true}">
   <h1 class="text-center p-3"><span class="text-warning">CREA</span> il tuo evento</h1>
   <form title="Tutti  i campi sono obbligatori!" [formGroup]="eventForm" (ngSubmit)="onSubmit()"
     class="card bg-dark border border-light p-3 d-flex flex-column align-items-center w-75 mx-auto">
@@ -93,7 +93,8 @@
       <label class="me-2" for="data">Giorno:</label>
       <input type="date" formControlName="data" min="2023-01-01">
     </div>
-    <textarea class="w-75 mb-3" placeholder="Descrizione evento (min. 120 caratteri)" formControlName="descrizione" rows="10"></textarea>
+    <textarea class="w-75 mb-3" placeholder="Descrizione evento (min. 120 caratteri)" formControlName="descrizione"
+      rows="10"></textarea>
     <button class="btn btn-primary btn-rounded" [disabled]="!eventForm.valid">Crea evento</button>
   </form>
 </main>

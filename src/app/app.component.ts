@@ -10,6 +10,7 @@ import { Subscription } from 'rxjs';
 export class AppComponent {
   title = 'smoothclone';
   loggato: boolean = false;
+  loading: boolean = false;
 
   subscriptions:Subscription[] = [];
 
@@ -22,7 +23,9 @@ export class AppComponent {
   }
 
   logout() {
+    this.loading = true;
     this.authSrv.logout()
+    this.loading = false;
   }
 
 }
