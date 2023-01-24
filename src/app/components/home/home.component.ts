@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { AuthService } from 'src/app/security/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +15,7 @@ export class HomeComponent implements OnInit {
   subscriptions: Subscription[] = [];
   loading: boolean = false;
 
-  constructor(private authSrv: AuthService) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.loading = true;

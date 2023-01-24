@@ -1,5 +1,5 @@
 <section [ngClass]="{'loading' : loading == true}">
-  <h2 class="text-center mb-5"><span class="text-warning">REGISTRATI</span> e trova o crea l'evento adatto a te</h2>
+  <h2 class="text-center mb-5 px-3"><span class="text-warning">REGISTRATI</span> e trova o crea l'evento adatto a te</h2>
   <div id="box" class="d-flex flex-column-reverse flex-lg-row justify-content-evenly align-items-center container">
     <!-- LINK AL LOGIN -->
     <div class="card bg-dark border border-light p-3 d-flex flex-column align-items-center mb-5 mb-lg-0 order">
@@ -10,9 +10,9 @@
     <form title="Tutti  i campi sono obbligatori!" [formGroup]="registerForm" (ngSubmit)="onSubmit()"
       class="card bg-dark border border-light p-3 d-flex flex-column align-items-center mb-5 mb-lg-0">
       <h4 class="mb-0">Anagrafica</h4>
-      <div>
-        <input class="me-2" type="text" formControlName="nome" placeholder="Nome">
-        <input type="text" formControlName="cognome" placeholder="Cognome" class="my-3">
+      <div class="d-flex flex-column flex-lg-row my-lg-3 w-100">
+        <input class="me-2 my-3 my-lg-0 w-100" type="text" formControlName="nome" placeholder="Nome">
+        <input type="text" formControlName="cognome" placeholder="Cognome" class="mb-3 my-lg-0 w-100">
       </div>
       <input class="w-100" type="text" formControlName="team" placeholder="Team">
       <mdb-form-control class="w-100 d-flex flex-column justify-content-start border rounded border-light my-3">
@@ -27,15 +27,15 @@
         </div>
       </mdb-form-control>
       <input class="w-100" type="number" formControlName="anno" placeholder="Anno di nascita" min="1964" max="2005"
-        mdbTooltip="Dev'essere compreso tra 1964 e 2005">
+        mdbTooltip="Dev'essere compreso tra 1964 e 2005" placement="top" trigger="focus">
       <hr class="container text-light my-3">
       <h4 class="mb-3">Credenziali d'accesso</h4>
       <input class="w-100" type="email" formControlName="email" placeholder="Email">
       <input type="password" formControlName="password" placeholder="Password" class="w-100 my-3"
         mdbTooltip="La password deve essere lunga almeno 8 caratteri e deve contenere almeno una maiuscola, una minuscola, un numero ed un carattere speciale"
-        placement="right" trigger="focus">
+        placement="top" trigger="focus">
       <input type="password" formControlName="confermaPassword" placeholder="Conferma password" class="w-100"
-        mdbTooltip="Le password devono combaciare" placement="right" trigger="focus">
+        mdbTooltip="Le password devono combaciare" placement="top" trigger="focus">
       <button type="submit" class="btn btn-primary w-100 mt-3" [disabled]="!registerForm.valid">Registrati</button>
     </form>
   </div>
