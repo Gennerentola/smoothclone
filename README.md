@@ -16,7 +16,7 @@ Il progetto si serve di Firebase versione 9.16.0 per la gestione dell'autenticaz
 
 # Funzionalità del sito al demo day :1st_place_medal:
 
-Il sito presenta l'opportunità di iscriversi e di creare eventi da zero, oppure particpare ad eventi creati da altri utenti. La lista degli eventi attualmente creati è navigabile anche ad un visitatore non loggato, in modo da invogliare l'utente ad iscriversi al sito o a condividere un evento con un suo conoscente.
+Il sito presenta l'opportunità di iscriversi e di creare eventi da zero, oppure partecipare ad eventi creati da altri utenti. La lista degli eventi attualmente creati è navigabile anche ad un visitatore non loggato, in modo da invogliare l'utente ad iscriversi al sito o a condividere un evento con un suo conoscente.
 
 ## Regstrazione e accesso :punch:
 
@@ -29,4 +29,4 @@ La gestione delle iscrizioni avviene sulla pagina "user".
 
 ## Profilo utente :punch:
 
-Accessibile dopo aver effettuato il login, il bottone con l'icona dell'utente (o in alternativa il bottone "Vai al tuo profilo" in home) permettono di raggiungere la pagina "user". Da qui è possibile vedere i propri dati anagrafici e, se ci si è iscritti ad almeno un evento, una tabella con gli eventi a cui si è presi parte, con un bottone "Dettagli evento" che fornirà da shortcut per la pagina di dettaglio di quel preciso evento e "Cancella iscrizione" che invece permetterà di disiscriversi dall'evento.
+Accessibile dopo aver effettuato il login, il bottone con l'icona dell'utente (o in alternativa il bottone "Vai al tuo profilo" in home) permettono di raggiungere la pagina "user". Da qui è possibile vedere i propri dati anagrafici e, se ci si è iscritti ad almeno un evento, una tabella con gli eventi a cui si è preso parte, con un bottone "Dettagli evento" che fungerà da shortcut per la pagina di dettaglio di quel preciso evento e un bottone "Cancella iscrizione" che invece permetterà di cancellarsi dall'evento.
