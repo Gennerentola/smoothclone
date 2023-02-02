@@ -41,7 +41,7 @@
 
   <!-- DETTAGLI EVENTO -->
   <ng-template #dettagli>
-    <div class="container p-5">
+    <div class="container p-5" *ngIf="dettaglio; else errore">
       <div id="cartaDettaglio" class="border border-2 border-light rounded-6 p-3" [ngClass]="{
       'boxing': dettaglio.sport == 'Boxing',
       'mma': dettaglio.sport == 'MMA',
@@ -71,5 +71,12 @@
         </div>
       </div>
     </div>
+
+    <!-- ERRORE DETTAGLIO EVENTO -->
+    <ng-template #errore>
+      <div class="p-5">
+        <h1 class="text-center text-muted p-5">Siamo spiacenti, impossibile trovare l'evento!</h1>
+      </div>
+    </ng-template>
   </ng-template>
 </main>

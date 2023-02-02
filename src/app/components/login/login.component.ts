@@ -39,8 +39,10 @@ export class LoginComponent implements OnInit {
     }
     this.authSrv.login(data).pipe(catchError(err => {
       if (err.error.error.message == "EMAIL_NOT_FOUND") {
+        this.loading = false;
         alert("Utente non registrato")
       } else if (err.error.error.message == "INVALID_PASSWORD") {
+        this.loading = false;
         alert("Password errata")
       }
       throw err
