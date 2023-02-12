@@ -18,7 +18,7 @@ Il progetto si serve di Firebase versione 9.16.0 per la gestione dell'autenticaz
 
 Il sito presenta l'opportunità di iscriversi e di creare eventi da zero, oppure partecipare ad eventi creati da altri utenti. La lista degli eventi attualmente creati è navigabile anche ad un visitatore non loggato, in modo da invogliare l'utente ad iscriversi al sito o a condividere un evento con un suo conoscente.
 
-## Regstrazione e accesso :punch:
+## Registrazione e accesso :punch:
 
 Tramite il bottone "Accedi" in alto a destra o col bottone "Unisciti a noi" si accede alla sezione di login e registrazione. La registrazione avviene tramite la raccolta di un'anagrafica e dei dati d'accesso, questi ultimi da usare successivamente nel form di login per accedere.
 

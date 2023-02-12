@@ -61,6 +61,7 @@ export class RegisterComponent implements OnInit {
     // ISCRIZIONE DATI D'ACCESSO
     this.authSrv.signUpCredenziali(credenziali).pipe(catchError(err => {
       if (err.error.error.code == 400) {
+        this.loading = false;
         alert('Email già esistente');
       }
       throw err
