@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from './security/auth.service';
 import { Subscription } from 'rxjs';
+import { AuthGuard } from './security/auth.guard';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ export class AppComponent {
 
   subscriptions: Subscription[] = [];
 
-  constructor(private authSrv: AuthService) { }
+  constructor(private authSrv: AuthService, private navGuard: AuthGuard) { }
 
   ngOnInit(): void {
     if (localStorage.getItem('atleta')) {
@@ -26,6 +27,10 @@ export class AppComponent {
     this.loading = true;
     this.authSrv.logout()
     this.loading = false;
+  }
+
+  naviga(link: string) {
+    this.navGuard.controlloCustom(link)
   }
 
 }

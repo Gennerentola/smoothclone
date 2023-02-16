@@ -4,7 +4,7 @@ Progetto generato con [Angular CLI](https://github.com/angular/angular-cli) vers
 
 ## Development server
 
-Fai partire `ng serve` sul terminale e naviga su `http://localhost:4200/`. (Puoi anche far partire `ng serve -o` per aprire la pagina in automatico sul tuo browser predefinito)
+Fai partire `ng serve` sul terminale e naviga su `https://smoothclone-51d89.web.app//`. (Puoi anche far partire `ng serve -o` per aprire la pagina in automatico sul tuo browser predefinito)
 
 ## Ulteriori informazioni
 

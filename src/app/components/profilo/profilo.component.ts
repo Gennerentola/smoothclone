@@ -56,7 +56,7 @@ export class ProfiloComponent implements OnInit {
     this.loading = true;
     this.eventiSrv.deleteIscrizione(id).subscribe(() => {
       this.loading = false;
-      window.location.href = 'http://localhost:4200/user'
+      window.location.href = 'https://smoothclone-51d89.web.app//user'
     })
   }
 }

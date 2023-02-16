@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { AuthGuard } from 'src/app/security/auth.guard';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,7 @@ export class HomeComponent implements OnInit {
   subscriptions: Subscription[] = [];
   loading: boolean = false;
 
-  constructor() { }
+  constructor(private navGuard: AuthGuard) { }
 
   ngOnInit(): void {
     this.loading = true;
@@ -26,6 +27,10 @@ export class HomeComponent implements OnInit {
       this.genere = this.user!.genere;
     }
     this.loading = false;
+  }
+
+  naviga(link: string) {
+    this.navGuard.controlloCustom(link)
   }
 
 }

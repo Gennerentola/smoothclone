@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
       this.authSrv.recuperoAnagrafica(this.loginForm.value.email.toLowerCase());
       setTimeout(() => {
         this.loading = false;
-        window.location.href = 'http://localhost:4200';
+        window.location.href = 'https://smoothclone-51d89.web.app/';
       }, 500)
     })
 

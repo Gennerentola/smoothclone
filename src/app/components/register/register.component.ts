@@ -80,7 +80,7 @@ export class RegisterComponent implements OnInit {
       // RECUPERO DATI ANAGRAFICI
       setTimeout(() => {
         this.loading = false;
-        window.location.href = 'http://localhost:4200';
+        window.location.href = 'https://smoothclone-51d89.web.app/';
       }, 500)
     });
 

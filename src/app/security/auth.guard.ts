@@ -24,4 +24,12 @@ export class AuthGuard implements CanActivate {
     );
   }
 
+  controlloCustom(link: string) {
+    if (localStorage.getItem('atleta')) {
+      this.router.navigate([`'${link}'`])
+    } else {
+      alert('Effettua l\'accesso per continuare')
+    }
+  }
+
 }

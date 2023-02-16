@@ -85,7 +85,7 @@ export class EventiComponent implements OnInit {
           })).subscribe(() => {
             this.err = undefined;
             this.loading = false;
-            window.location.href = 'http://localhost:4200/user'
+            window.location.href = 'https://smoothclone-51d89.web.app//user'
           })
         } else {
           this.loading = false;

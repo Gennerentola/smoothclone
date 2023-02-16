@@ -75,7 +75,7 @@ export class AuthService {
     if (this.timeoutLogout) {
       clearTimeout(this.timeoutLogout)
     }
-    window.location.href = 'http://localhost:4200';
+    window.location.href = 'https://smoothclone-51d89.web.app/';
   }
 
   autoLogout(data: AuthAthlete) {
